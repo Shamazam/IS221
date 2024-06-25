@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<service>
+    
+    <service name="Plumbing"/>
+    <service name="Roof Repair"/>
+    <service name="Home Construction"/>
+    <service name="Painting"/>
+    <service name="Electrical Work"/>
+    <service name="Tiling"/>
+    <service name="Cleaning"/>
+    <service name="Joinery"/>
+</service>

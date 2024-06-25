@@ -1,0 +1,296 @@
+﻿<%@ Master Language="VB" CodeFile="HandyHelpers.master.vb" Inherits="HandyHelpers" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Handy Helpers</title>
+    <link rel="shortcut icon" href="images/logo.png">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+        body {
+			font-family: 'Rubik','sans-serif','Arial';
+			margin: 0;
+			padding: 0;	
+			background-color:#abd5e0;
+			font-size: 18px;
+			
+		}
+		
+		h1
+		{
+		    font-size: 2.5em;
+		}
+		
+		h2
+		{
+		    font-size: 2.2em;
+		}
+		h3
+		{
+		    font-size: 2em;
+		}
+		h4
+		{
+		    font-size: 1.8em;
+		}
+		p
+		{  
+		    font-size: 0.9em;
+		    
+		}
+		    
+		    
+        header {
+			background-color: white; 
+			color: #000; 
+			padding: 0.5px 5px 0.5px 5px; 
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		nav {
+			flex: 1; /* Pushes the navlist to the left */
+		}
+		nav ul li,
+		#user-actions li {
+			display: inline;
+			transition: background-color 0.3s;
+			vertical-align: middle; 
+		}
+		nav ul li a,
+		#user-actions li a {
+			color: #000; 
+			text-decoration: none;
+			padding: 10px 15px; 
+			border-radius: 20px; 
+			border: 2px solid transparent; 
+			line-height: 30px; 
+			font-weight: bold; 
+		}
+		nav ul li a:hover,
+		#user-actions li a:hover {
+			background-color: #0000ff; 
+			color: #fff; 
+		}
+		
+		nav ul li a,
+		#user-actions li input {
+			color: #000; 
+			text-decoration: none;
+			padding: 10px 15px; 
+			border-radius: 20px; 
+			border: 2px solid transparent; 
+			line-height: 15px; 
+			font-weight: bold; 
+		}
+		nav ul li input:hover,
+		#user-actions li a:hover {
+			background-color: #0000ff; 
+			color: #fff; 
+		}
+		
+        footer {
+			background-color: white; 
+			color: #000; 
+			padding: 0.5px 5px 0.5px 5px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		nav {
+			flex: 1; /* Pushes the navlist to the left */
+		}
+		nav ul li,
+		#user-actions li {
+			display: inline;
+			transition: background-color 0.3s; 
+			vertical-align: middle; 
+		}
+		nav ul li a,
+		#user-actions li a {
+			color: #000; 
+			text-decoration: none;
+			padding: 10px 15px; 
+			border-radius: 20px; 
+			border: 2px solid transparent; 
+			line-height: 30px; 
+			font-weight: bold; 
+		}
+		nav ul li a:hover,
+		#user-actions li a:hover {
+			background-color: #0000ff; 
+			color: #fff; 
+		}	
+		
+        nav ul li a:hover,
+		#user-actions li input:hover {
+			background-color: #0000ff; 
+			color: #fff; 
+		}
+		footer ul
+		{
+		    display:flex;
+		    
+		}
+		footer ul li
+		{
+		    margin-right: 2em;
+		    margin-bottom: 0.8em;
+		}
+		
+		#footer-links li a
+		{
+		   color: Black;  
+		}
+		
+		#footer-links li a:hover
+		{
+		    
+		     text-decoration: underline;
+            color:#0000ff 
+		}
+		
+		address ul
+		{
+		    list-style-type:none;
+		    display:flex;
+		}
+		#footer-links
+		{
+		    list-style-type:none;
+		}
+		
+		@media screen and (max-width: 1300px) 
+		{
+		    header
+		    {
+		        display:block;
+		        font-size:0.9em
+		    }
+		    header input
+		    {
+		        font-size:0.7em
+		    }
+		    header img
+		    {
+		        display:block;
+		        margin-left:auto;
+		        margin-right: auto;
+		    } 
+            nav ul, #user-actions {
+                display: block;
+                text-align: center;
+            }
+            nav ul li, #user-actions li {
+                display: block;
+                margin: 10px 0;
+            }
+            footer  ul
+            {
+                display:block;
+                font-size: 0.8em;
+            }
+            footer dl
+            {
+                
+                font-size: 0.8em;
+            }
+        }
+        
+        
+        @media screen and (max-width: 600px)
+     {
+         footer
+         {
+             display:block;
+             text-align:center;
+             margin-left:auto;
+             margin-right:auto;
+         }
+         
+     } 
+     
+     @media print
+         {
+            header
+            {
+                display:none;
+            }
+            footer
+            {
+                display:none;
+            }
+            .breadcrumb
+            {
+                display:none;
+            }  
+         }
+		
+    </style>
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <header>
+			<asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Home.aspx"><img src="images/logowithname.gif" title="Logo" alt="Logo" width="150" height = "50"/></asp:HyperLink>
+
+			<nav id = "navlist">
+				<ul>
+					<li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink></li>
+					<li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/RepairProjects.aspx">Repair Projects</asp:HyperLink></li>
+					<li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/ForBusiness.aspx">For Business</asp:HyperLink></li>
+					<li><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Support.aspx">Support</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/DevInfo.aspx">Dev Info</asp:HyperLink></li>
+
+				</ul>
+			</nav>
+			<ul id = "user-actions">
+                
+				<li><asp:Button ID="btnloginlogout" runat="server" Text=""></asp:Button></li>
+                <li><asp:Button ID="btnregisterprofile" runat="server" Text=""></asp:Button></li>
+                
+			</ul>
+			
+		</header>
+    
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    
+        <footer>
+
+            
+            <ul id = "footer-links">
+                
+                <li><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/TermsNCondition.aspx">Terms & Condition</asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/DevInfo.aspx">Dev Info</asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/RepairProjects.aspx">Repair Projects</asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/OurPartners.aspx">Our Partners</asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/Feedback.aspx">Feedback</asp:HyperLink></li>
+                <li>&copy; HandyHelpers.com 2024</li>
+            </ul>
+
+             <address>     
+             
+                                
+                    <dl class = "contact-link">
+                         <dt><i class="ion-ios-telephone"></i> Telephone : </dt><dd><a href="tel:+6798569258">+679-8569258</a></dd>
+                         <dt><i class="ion-email"></i> Mail : </dt><dd><a href="mailto:handyhelpers@gmail.com">handyhelpers@gmail.com</a></dd>
+                    </dl>
+                                
+
+            </address> 
+        </footer>
+    </form>
+</body>
+</html>
